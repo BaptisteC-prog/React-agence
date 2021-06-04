@@ -1,0 +1,32 @@
+function Accordion2({ title, msg }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
+
+  const style = {
+    marginBottom: '1rem',
+    backgroundColor: '#FF6060',
+    width: '100%',
+    display: 'block',
+    textAlign: 'left',
+    fontFamily: 'Montserrat',
+    fontWeight: 'bold',
+    border: '0px',
+    fontSize: '22px'
+  };
+
+  const cardStyle = {
+    border: "none",
+    marginTop: "15px",
+    backgroundColor: "#F7F7F7",
+    fontSize: '18px'
+  }
+
+  return (
+    <div id="accordion" style={{ width: "100%" }}>
+      <Button color="primary" onClick={toggle} style={style}>{title}</Button>
+      {isOpen ? <div id="card" style={cardStyle}>
+        {msg}
+      </div> : null}
+    </div>
+  );
+}

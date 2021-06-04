@@ -1,0 +1,90 @@
+////////////////////////VERSION BUGGEE MOCHE
+function Slides({ logement }) {
+
+  //      {logement.pictures.map(item => <img key={item} src={item} />)}
+
+  /*
+         {typeof (logement.pictures[3]) !== undefined && <img src={logement.pictures[3]} />}
+          {typeof (logement.pictures[4]) !== undefined && <img src={logement.pictures[4]} />}
+          {typeof (logement.pictures[5]) !== undefined && <img src={logement.pictures[5]} />}
+          {typeof (logement.pictures[6]) !== undefined && <img src={logement.pictures[6]} />}
+  */
+
+  return (
+    <div id="Slides2">
+      <Carousel viewportWidth="100%" height="415px" cellPadding={5}>
+        {logement.pictures.map(item => <img key={item} src={item} />)}
+      </Carousel>
+    </div>
+  )
+}
+
+///////////////////////////////////////
+function Slides({ logement }) {
+  //{logement.pictures.map(aaa => <img key={aaa} src={aaa} />)}
+  return (
+    <div>
+      <Carousel viewportWidth="100%" height="auto" cellPadding={1}>
+        {logement.pictures.map(item => <img key={item} src={item} />)}
+      </Carousel>
+    </div>
+  )
+}
+
+
+
+///////////STATIC
+
+function Slides({ logement }) {
+  //          <img src={logement.pictures[0]} />
+ // <img src={logement.pictures[1]} />
+ // <img src={logement.pictures[2]} />
+ //console.log(logement.pictures.map(item => logement.pictures[item] ))
+ //{logement.pictures.map(item => <img key={item} src={logement.pictures[{item}]} />)}
+  return (
+    <div>
+ 
+        <Carousel viewportWidth="100%" cellPadding={5}>
+           <img src={logement.pictures[0]} />
+        </Carousel>
+
+     
+    </div>
+  )
+}
+
+
+INFOJSON AVEC UNE CLASSE
+/*
+class JSONInfo extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {logements:[]};
+    this.getJSON = this.getJSON.bind(this);
+  }
+ 
+  componentDidMount() {
+    this.getJSON()
+  }
+ 
+  getJSON() {
+    fetch("/logements2.json")
+      .then((val) => val.json())
+      .then((result) => this.setState({logements:result}))
+  }
+ 
+  setJSON() {
+ 
+    this.setState(this.state, this.getJSON)
+    // fetch("/logements2.json")
+    //   .then((val) => val.json())
+    //   .then((items) => this.setState( this.state,null))
+  }
+ 
+  render() {
+    return (
+      <Machin logements={this.state.logements} />
+    )
+  }
+}
+*/
